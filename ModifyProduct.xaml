@@ -1,0 +1,56 @@
+﻿<Window x:Class="AutoParts.ModifyProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoParts"
+        mc:Ignorable="d"
+        Title="Modify Product Window" Height="532" Width="982" ResizeMode="CanResizeWithGrip">
+    <Grid Background="LightYellow">
+        <ListView Name="lvModifyProductList"  FontSize="14"  FontWeight="Bold" SelectionChanged="lvModifyProductList_SelectionChanged" Margin="10,98,10,133">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="40" DisplayMemberBinding="{Binding ProductId}" />
+                    <GridViewColumn Header="Product Name" Width="260" DisplayMemberBinding="{Binding ProductName}" />
+                    <GridViewColumn Header="SupplierId" Width="80" DisplayMemberBinding="{Binding CustSupplierId}" />
+                    <GridViewColumn Header="Qty/Unit" Width="100" DisplayMemberBinding="{Binding QuantityPerUnit}" />
+                    <GridViewColumn Header="Price" Width="100" DisplayMemberBinding="{Binding CostPrice}" />
+                    <GridViewColumn Header="Units On Stock" Width="120" DisplayMemberBinding="{Binding UnitsOnStock}" />
+                    <GridViewColumn Header="Units On Order" Width="120" DisplayMemberBinding="{Binding UnitsOnOrder}" />
+                    <GridViewColumn Header="Discontinued" Width="100" DisplayMemberBinding="{Binding Discontinued}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Sort by" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <ComboBox Name="comboSortBy" FontSize="14"  FontWeight="Bold" SelectionChanged="comboSortBy_SelectionChanged" DropDownClosed="comboSortBy_DropDownClosed" HorizontalAlignment="Left" Margin="109,38,0,0" VerticalAlignment="Top" Width="320">
+            <ComboBoxItem Content="ID"/>
+            <ComboBoxItem Content="Product Name"/>
+            <ComboBoxItem Content="SupplierId"/>
+            <ComboBoxItem Content="Price"/>
+            <ComboBoxItem Content="Units On Stock"/>
+            <ComboBoxItem Content="Units On Order"/>
+        </ComboBox>
+        <Button Name="btnMPAdd" Content="Add"  FontSize="14"  FontWeight="Bold" Click="btnMPAdd_Click"  HorizontalAlignment="Left" Margin="474,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMPRemove" Content="Remove"  FontSize="14"  FontWeight="Bold" Click="btnMPRemove_Click" HorizontalAlignment="Left" Margin="574,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMPUpdate" Content="Update"  FontSize="14"  FontWeight="Bold" Click="btnMPUpdate_Click" HorizontalAlignment="Left" Margin="676,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMPRefresh" Content="Refresh"  FontSize="14"  FontWeight="Bold" Click="btnMPRefresh_Click" HorizontalAlignment="Left" Margin="773,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMPReturn" Content="Return"  FontSize="14"  FontWeight="Bold" Click="btnMPReturn_Click" HorizontalAlignment="Left" Margin="870,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <GroupBox Header="Product Detail" FontSize="14"  FontWeight="Bold"  HorizontalAlignment="Left" Height="118" Margin="10,374,0,0" VerticalAlignment="Top" Width="954"/>
+        <Label Content="Units On Order" HorizontalAlignment="Left" Margin="724,446,0,0" VerticalAlignment="Top"/>
+        <Label Content="Units On Stock" HorizontalAlignment="Left" Margin="723,405,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.67,0.5"/>
+        <Label Content="Discontinued(True/False)" HorizontalAlignment="Left" Margin="452,447,0,0" VerticalAlignment="Top"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="517,405,0,0" VerticalAlignment="Top"/>
+        <Label Content="Qty/Unit" HorizontalAlignment="Left" Margin="239,447,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.079,10.654"/>
+        <Label Content="Product Name" HorizontalAlignment="Left" Margin="157,405,0,0" VerticalAlignment="Top"/>
+        <Label Content="SupplierId" HorizontalAlignment="Left" Margin="34,447,0,0" VerticalAlignment="Top"/>
+        <Label Content="Id:" HorizontalAlignment="Left" Margin="34,406,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.518,-0.853"/>
+        <Label Name="lblMPId" Content="..." HorizontalAlignment="Left" Margin="59,407,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.518,-0.853" Width="93"/>
+        <TextBox Name="tbMPUnitsOnStock" HorizontalAlignment="Left" Height="23" Margin="816,408,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
+        <TextBox Name="tbMPUnitsOnOrder" HorizontalAlignment="Left" Height="23" Margin="819,447,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="113"/>
+        <TextBox Name="tbMPSupplierId" HorizontalAlignment="Left" Height="23" Margin="103,449,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
+        <TextBox Name="tbMPQtyPerUnit" HorizontalAlignment="Left" Height="23" Margin="303,447,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
+        <TextBox Name="tbMPProductName" HorizontalAlignment="Left" Height="23" Margin="248,408,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
+        <TextBox Name="tbMPDiscontinued" HorizontalAlignment="Left" Height="23" Margin="598,450,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbMPPrice" HorizontalAlignment="Left" Height="23" Margin="561,408,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157"/>
+    </Grid>
+</Window>

@@ -1,0 +1,51 @@
+
+--- April 12 Yas
+DID SINCE LAST SCRUM:
+1. Discussed the project with team and modified the project proposal 
+2. Made major changes in the software design and table structure
+3. connected to Azure at home
+4. Installed Visual Studio 2017 on class PC
+5. Added a few more steps on Trello
+6. Started on Initial window dewsign
+7. Started on creating databases
+
+
+
+WILL DO IN THE NEXT 24 HOURS
+1. Connected to Database in class.
+2. Complete creating all databases and setting constraint
+3. Commit the scrum and changes team made
+
+
+
+
+
+WHERE I NEED HELP IS...
+1. Need to search on WPF Sales window design which will present lots of data
+ 
+
+
+
+
+
+--- April 11 Wei
+DID SINCE LAST SCRUM:
+1. Discussed the project with team and modified the project proposal 
+2. Made major changes in the software design and table structure
+3. Started and continued on the software design tab pages
+4. Installed Visual Studio 2017 on class PC
+5. connected to Azure at home
+6. Connected to database at home
+
+
+
+WILL DO IN THE NEXT 24 HOURS
+1. Modify the File tab pages (Main structure) with team
+2. Continue software design modification
+2. Add a few more planned items in Trello
+   
+
+
+WHERE I NEED HELP IS...
+1. I need to find out why I can't push on the source tree
+

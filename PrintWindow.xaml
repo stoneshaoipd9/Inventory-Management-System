@@ -1,0 +1,67 @@
+﻿<Window x:Class="AutoParts.PrintWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoParts"
+        mc:Ignorable="d"
+        Title="PrintWindow" Height="675" Width="976.5">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Canvas>
+            <GroupBox Header="Amount" FontSize="16" HorizontalAlignment="Left" Height="386" Margin="714,252,0,0" VerticalAlignment="Top" Width="238">
+            </GroupBox>
+            <Label Content="Subtotal:" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="719,297,0,0" VerticalAlignment="Top"/>
+            <Label Content="Tax1:" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="743,341,0,0" VerticalAlignment="Top"/>
+            <Label Content="Tax2:" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="743,384,0,0" VerticalAlignment="Top"/>
+            <Label Content="Total:" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" Margin="736,427,0,0" VerticalAlignment="Top"/>
+            <TextBlock Name="tbOrderTax2" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="799,390,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="137"/>
+            <TextBlock Name="tbOrderTax1" FontSize="16" FontWeight="Normal" HorizontalAlignment="Left" Margin="799,347,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="137"/>
+            <TextBlock Name="tbOrderTotal" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="799,432,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="137" Height="26"/>
+            <TextBlock Name="tbOrderSubtotal" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="799,304,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="137"/>
+            <TextBlock FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="734,489,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="133" Width="202"><Run Text="Terms and Conditions:"/><LineBreak/><Run/><LineBreak/><Run Text="Payment is due within 15 days"/><LineBreak/><Run/><LineBreak/><Run Text="Montreal, Q.C, CANADA"/><LineBreak/><Run/><LineBreak/><Run Text="Account No.: 1234567 "/></TextBlock>
+
+
+            <GroupBox Header="Order List" FontSize="16" HorizontalAlignment="Left" Height="386" Margin="10,252,0,0" VerticalAlignment="Top" Width="699">
+                <ListView Name="lvOrderList" HorizontalAlignment="Left" Height="357" Margin="0,0,-2,0" VerticalAlignment="Top" Width="689">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" Width="80" DisplayMemberBinding="{Binding ProductId}" />
+                            <GridViewColumn Header="Product Name" Width="260" DisplayMemberBinding="{Binding ProductName}" />
+                            <GridViewColumn Header="Price" Width="120" DisplayMemberBinding="{Binding CostPrice}" />
+                            <GridViewColumn Header="Quantity" Width="100" DisplayMemberBinding="{Binding Quantity}" />
+                            <GridViewColumn Header="Amount" Width="120" DisplayMemberBinding="{Binding Amount}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </GroupBox>
+
+            <GroupBox Header="Company Info" FontSize="16" HorizontalAlignment="Left" Height="115" Margin="10,10,0,0" VerticalAlignment="Top" Width="437"/>
+            <Label Content="Auto Parts Y&amp;W Company" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="16,38,0,0" VerticalAlignment="Top" Width="188"/>
+            <Label Content="Phone: 514.135.7988" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="17,82,0,0" VerticalAlignment="Top" Width="139"/>
+            <Label Content="21275 Lakeshore Dr, &#xD;&#xA;Sainte-Anne-de-Bellevue, QC &#xD;&#xA;H9X 3L9" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="203,41,0,0" VerticalAlignment="Top" Width="194" Height="73"/>
+
+            <GroupBox Header="Invoice Info" FontSize="16" HorizontalAlignment="Left" Height="115" Margin="464,10,0,0" VerticalAlignment="Top" Width="488"/>
+            <ComboBox Name="comboInvoiceNo" SelectionChanged="comboInvoiceNo_SelectionChanged"  ItemsSource="{Binding Path=orderList}" DisplayMemberPath="OrderId" HorizontalAlignment="Left" Margin="553,46,0,0" VerticalAlignment="Top" Width="166" Height="22">
+            </ComboBox>
+            <TextBlock Name="tbOrderVia" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="552,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"/>
+            <TextBlock Name="tbOrderDate" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="812,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="124"/>
+            <TextBlock Name="tbShipDate" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="812,91,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="124"/>
+            <Label Content="Invoice No." FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="474,41,0,0" VerticalAlignment="Top"/>
+            <Label Content="Order Date:" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="725,41,0,0" VerticalAlignment="Top"/>
+            <Label Content="Order Via:" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="477,82,0,0" VerticalAlignment="Top"/>
+            <Label Content="Ship Date:" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="736,85,0,0" VerticalAlignment="Top"/>
+
+            <GroupBox Header="Bill To" FontSize="16" HorizontalAlignment="Left" Height="106" Margin="10,130,0,0" VerticalAlignment="Top" Width="437"/>
+            <TextBlock Name="tbBillToCompany" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="409"/>
+            <TextBlock Name="tbBillToAddress" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="23,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="41" Width="409"/>
+
+            <GroupBox Header="Ship To" FontSize="16" HorizontalAlignment="Left" Height="106" Margin="464,130,0,0" VerticalAlignment="Top" Width="488"/>
+            <TextBlock Name="tbShipToCompany" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="477,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="459"/>
+            <TextBlock Name="tbShipToAddress" FontSize="14" FontWeight="Normal" HorizontalAlignment="Left" Margin="477,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="41" Width="459"/>
+        </Canvas>
+    </Grid>
+</Window>

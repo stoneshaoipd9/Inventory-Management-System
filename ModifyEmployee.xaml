@@ -1,0 +1,53 @@
+﻿<Window x:Class="AutoParts.ModifyEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoParts"
+        mc:Ignorable="d"
+        Title="ModifyEmployee"  Height="537.5" Width="990" ResizeMode="CanResizeWithGrip">
+    <Grid Background="LightPink" Margin="0,0,2,3">
+        <ListView Name="lvModifyEmployeeList"  FontSize="14"  FontWeight="Bold" SelectionChanged="lvModifyEmployeeList_SelectionChanged"  Margin="10,98,16,136">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="40" DisplayMemberBinding="{Binding EmployeeId}" />
+                    <GridViewColumn Header="First Name" Width="200" DisplayMemberBinding="{Binding FirstName}" />
+                    <GridViewColumn Header="Last Name" Width="200" DisplayMemberBinding="{Binding LastName}" />
+                    <GridViewColumn Header="User Name" Width="200" DisplayMemberBinding="{Binding UserName}" />
+                    <GridViewColumn Header="Password" Width="200" DisplayMemberBinding="{Binding Password}" />
+                    <GridViewColumn Header="Is Admin" Width="100" DisplayMemberBinding="{Binding IsAdmin}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Sort by" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <ComboBox Name="comboMESortBy" FontSize="14"  FontWeight="Bold" SelectionChanged="comboMESortBy_SelectionChanged"  DropDownClosed="comboMESortBy_DropDownClosed"  HorizontalAlignment="Left" Margin="109,38,0,0" VerticalAlignment="Top" Width="320">
+            <ComboBoxItem Content="ID"/>
+            <ComboBoxItem Content="First Name"/>
+            <ComboBoxItem Content="Last Name"/>
+            <ComboBoxItem Content="User Name"/>
+            <ComboBoxItem Content="Password"/>
+            <ComboBoxItem Content="Is Admin"/>
+        </ComboBox>
+        <Button Name="btnMCAdd" Content="Add"  FontSize="14"  FontWeight="Bold" Click="btnMCAdd_Click"  HorizontalAlignment="Left" Margin="474,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMCRemove" Content="Remove"  FontSize="14"  FontWeight="Bold" Click="btnMCRemove_Click"  HorizontalAlignment="Left" Margin="574,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMCUpdate" Content="Update"  FontSize="14"  FontWeight="Bold" Click="btnMCUpdate_Click"  HorizontalAlignment="Left" Margin="676,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMCRefresh" Content="Refresh"  FontSize="14"  FontWeight="Bold" Click="btnMCRefresh_Click"  HorizontalAlignment="Left" Margin="773,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMCReturn" Content="Return"  FontSize="14"  FontWeight="Bold" Click="btnMCReturn_Click"  HorizontalAlignment="Left" Margin="870,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <GroupBox Header="Employee Detail" FontSize="14"  FontWeight="Bold"  HorizontalAlignment="Left" Height="116" Margin="10,374,0,0" VerticalAlignment="Top" Width="954"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="565,445,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.341,0.577"/>
+        <Label Content="Last Name" HorizontalAlignment="Left" Margin="565,408,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.67,0.5"/>
+        <Label Content="Is Admin" HorizontalAlignment="Left" Margin="34,446,0,0" VerticalAlignment="Top"/>
+        <Label Content="User Name" HorizontalAlignment="Left" Margin="185,446,0,0" VerticalAlignment="Top"/>
+        <Label Content="First Name" HorizontalAlignment="Left" Margin="138,407,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.079,10.654"/>
+        <Label Content="Id:" HorizontalAlignment="Left" Margin="34,406,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.518,-0.853"/>
+        <Label Name="lblMEId" Content="..." HorizontalAlignment="Left" Margin="59,407,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.518,-0.853" Width="79"/>
+        <TextBox Name="tbMELastName" HorizontalAlignment="Left" Height="23" Margin="636,411,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="299"/>
+        <TextBox Name="tbMEIsAdmin" HorizontalAlignment="Left" Height="23" Margin="98,449,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="64"/>
+        <TextBox Name="tbMEUserName" HorizontalAlignment="Left" Height="23" Margin="259,448,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="290"/>
+        <TextBox Name="tbMEFirstName" HorizontalAlignment="Left" Height="23" Margin="210,410,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="339"/>
+        <TextBox Name="tbMEPassword" HorizontalAlignment="Left" Height="23" Margin="636,448,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="299"/>
+
+
+
+    </Grid>
+</Window>

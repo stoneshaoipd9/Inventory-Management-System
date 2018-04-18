@@ -1,0 +1,16 @@
+﻿<Window x:Class="AutoParts.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Welcome to Auto Parts Inventory Management System" FontSize="24" FontWeight="Bold" Height="457.5" Width="497.5" ResizeMode="NoResize">
+    <Grid Background="LightSteelBlue">
+        <GroupBox Header="Login" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" Height="398" Margin="10,10,0,0" VerticalAlignment="Top" Width="459">
+        </GroupBox>
+        <Label Content="Password"  FontSize="20" FontWeight="Normal" HorizontalAlignment="Left" Margin="74,155,0,0" VerticalAlignment="Top"/>
+        <PasswordBox Name="pbPwd" FontSize="16" HorizontalAlignment="Left" Height="28" Margin="212,163,0,0" VerticalAlignment="Top" Width="217"/>
+        <Label Content="UserName"  FontSize="20" FontWeight="Normal" HorizontalAlignment="Left" Margin="65,89,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbUserName" x:FieldModifier="public" FontSize="16" HorizontalAlignment="Left" Height="28" Margin="212,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
+        <Label Name="lblMessage" FontSize="14" Content="" Foreground="Red" HorizontalAlignment="Left" Margin="65,238,0,0" VerticalAlignment="Top" Width="364" Height="30"/>
+        <Button Name="btnRegister" Content="Register" FontSize="20" HorizontalAlignment="Left" Margin="86,309,0,0" VerticalAlignment="Top" Width="112" Click="btnRegister_Click"/>
+        <Button Name="btnLogin" Content="Login" FontSize="20" HorizontalAlignment="Left" Margin="296,309,0,0" VerticalAlignment="Top" Width="112" Click="btnLogin_Click"/>
+    </Grid>
+</Window>

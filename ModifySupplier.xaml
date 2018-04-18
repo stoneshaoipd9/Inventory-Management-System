@@ -1,0 +1,51 @@
+﻿<Window x:Class="AutoParts.ModifySupplier"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoParts"
+        mc:Ignorable="d"
+        Title="ModifySupplier" Height="529.5" Width="984" ResizeMode="CanResizeWithGrip">
+    <Grid Background="LightGreen">
+        <ListView Name="lvModifyCustomerList"  FontSize="14"  FontWeight="Bold" SelectionChanged="lvModifyCustomerList_SelectionChanged"  Margin="10,98,12,133">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="40" DisplayMemberBinding="{Binding CustSupplierId}" />
+                    <GridViewColumn Header="Company Name" Width="200" DisplayMemberBinding="{Binding CompanyName}" />
+                    <GridViewColumn Header="Contact Name" Width="120" DisplayMemberBinding="{Binding ContactName}" />
+                    <GridViewColumn Header="Contact Title" Width="120" DisplayMemberBinding="{Binding ContactTitle}" />
+                    <GridViewColumn Header="Address" Width="350" DisplayMemberBinding="{Binding Address}" />
+                    <GridViewColumn Header="Phone" Width="120" DisplayMemberBinding="{Binding Phone}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Sort by" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <ComboBox Name="comboMCSortBy" FontSize="14"  FontWeight="Bold" SelectionChanged="comboMCSortBy_SelectionChanged"  DropDownClosed="comboMCSortBy_DropDownClosed"  HorizontalAlignment="Left" Margin="109,38,0,0" VerticalAlignment="Top" Width="320">
+            <ComboBoxItem Content="ID"/>
+            <ComboBoxItem Content="Company Name"/>
+            <ComboBoxItem Content="Contact Name"/>
+            <ComboBoxItem Content="Contact Title"/>
+            <ComboBoxItem Content="Address"/>
+            <ComboBoxItem Content="Phone"/>
+        </ComboBox>
+        <Button Name="btnMCAdd" Content="Add"  FontSize="14"  FontWeight="Bold" Click="btnMCAdd_Click"  HorizontalAlignment="Left" Margin="474,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMCRemove" Content="Remove"  FontSize="14"  FontWeight="Bold" Click="btnMCRemove_Click"  HorizontalAlignment="Left" Margin="574,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMCUpdate" Content="Update"  FontSize="14"  FontWeight="Bold" Click="btnMCUpdate_Click"  HorizontalAlignment="Left" Margin="676,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMCRefresh" Content="Refresh"  FontSize="14"  FontWeight="Bold" Click="btnMCRefresh_Click"  HorizontalAlignment="Left" Margin="773,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnMCReturn" Content="Return"  FontSize="14"  FontWeight="Bold" Click="btnMCReturn_Click"  HorizontalAlignment="Left" Margin="870,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <GroupBox Header="Supplier Detail" FontSize="14"  FontWeight="Bold"  HorizontalAlignment="Left" Height="116" Margin="10,374,0,0" VerticalAlignment="Top" Width="954"/>
+        <Label Content="Phone" HorizontalAlignment="Left" Margin="432,446,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.341,0.577"/>
+        <Label Content="Address" HorizontalAlignment="Left" Margin="623,408,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.67,0.5"/>
+        <Label Content="Contact Title" HorizontalAlignment="Left" Margin="34,446,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contact Name" HorizontalAlignment="Left" Margin="194,446,0,0" VerticalAlignment="Top"/>
+        <Label Content="Company Name" HorizontalAlignment="Left" Margin="138,407,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.079,10.654"/>
+        <Label Content="Id:" HorizontalAlignment="Left" Margin="34,406,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.518,-0.853"/>
+        <Label Name="lblMCId" Content="..." HorizontalAlignment="Left" Margin="59,407,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.518,-0.853" Width="79"/>
+        <TextBox Name="tbMCAddress" HorizontalAlignment="Left" Height="61" Margin="681,411,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
+        <TextBox Name="tbMCContactTitle" HorizontalAlignment="Left" Height="23" Margin="116,449,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="64"/>
+        <TextBox Name="tbMCContactName" HorizontalAlignment="Left" Height="23" Margin="285,448,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
+        <TextBox Name="tbMCCompanyName" HorizontalAlignment="Left" Height="23" Margin="234,410,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="367"/>
+        <TextBox Name="tbMCPhone" HorizontalAlignment="Left" Height="23" Margin="481,449,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
